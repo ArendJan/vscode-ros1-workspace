@@ -1,14 +1,19 @@
-# VSCode ROS2 Workspace Template
+# VSCode ROS Noetic Workspace Template
 
-This template will get you set up using ROS2 with VSCode as your IDE.
+## ROS1 Noetic edit of https://github.com/athackst/vscode_ros2_workspace
+Many thanks to her for the great setup that was easy to edit for ROS Noetic!
 
-See [how I develop with vscode and ros2](https://www.allisonthackston.com/articles/vscode_docker_ros2.html) for a more in-depth look on how to use this workspace.
+
+This template will get you set up using ROS Noetic with VSCode as your IDE.
+
+## Original *bit edited* readme:
+See [how I develop with vscode and ros2](https://www.allisonthackston.com/articles/vscode_docker_ros2.html) for a more in-depth look on how to use a workspace.
 
 ## Features
 
 ### Style
 
-ROS2-approved formatters are included in the IDE.  
+ROS2-approved formatters are included in the IDE.  *AJ: not sure if they are also okay for ros1*
 
 * **c++** uncrustify; config from `ament_uncrustify`
 * **python** autopep8; vscode settings consistent with the [style guide](https://index.ros.org/doc/ros2/Contributing/Code-Style-Language-Versions/)
@@ -24,11 +29,10 @@ Take a look at [how I develop using tasks](https://www.allisonthackston.com/arti
 This template sets up debugging for python files, gdb for cpp programs and ROS launch files.  See [`.vscode/launch.json`](.vscode/launch.json) for configuration details.
 
 ### Continuous Integration
+~~The template also comes with basic continuous integration set up. See [`.github/workflows/ros.yaml`](/.github/workflows/ros.yaml).~~
 
-The template also comes with basic continuous integration set up. See [`.github/workflows/ros.yaml`](/.github/workflows/ros.yaml).
-
-To remove a linter just delete it's name from this line:
-
+~~To remove a linter just delete it's name from this line:~~
+*AJ: removed as they always fail*
 ```yaml
       matrix:
           linter: [cppcheck, cpplint, uncrustify, lint_cmake, xmllint, flake8, pep257]
@@ -89,8 +93,8 @@ VSCode will build the dockerfile inside of `.devcontainer` for you.  If you open
 3. Install dependencies `Terminal->Run Task..->install dependencies`
 4. (optional) Adjust scripts to your liking.  These scripts are used both within tasks and CI.
    * `setup.sh` The setup commands for your code.  Default to import workspace and install dependencies.
-   * `build.sh` The build commands for your code.  Default to `--merge-install` and `--symlink-install`
-   * `test.sh` The test commands for your code.
+   * `build.sh` The build commands for your code.
+   * ~~`test.sh` The test commands for your code.~~
 5. Develop!
 
 
